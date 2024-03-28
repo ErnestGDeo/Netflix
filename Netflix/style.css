@@ -21,7 +21,7 @@ section {
 }
 
 .keyboard-box::before {
-  content: 'MY';
+  content: 'PAKET';
   position: absolute;
   color: #fff;
   font-size: 6em;
@@ -39,7 +39,7 @@ section {
 }
 
 .keyboard-box::after {
-  content: 'KEYBOARD';
+  content: 'NETFLIX';
   position: absolute;
   color: #fff;
   font-size: 4.3em;
@@ -100,4 +100,12 @@ section {
 
 .keyboard-box:hover .keyboard-img {
   transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
+}
+.btn-outline-dark {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
