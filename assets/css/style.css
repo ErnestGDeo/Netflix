@@ -1,0 +1,246 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #757575;
+}
+
+#projects {
+  background-color: #e2edff;
+}
+
+section {
+  padding-top: 5rem;
+ 
+}
+
+body {
+  background-color: rgb(4, 0, 10);
+}
+body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      ul,
+      li,
+      button,e
+      input,
+      textarea {
+        font-family: "Montserrat", Arial, sans-serif !important;
+
+      }
+
+  
+/* Footer Text Styles */
+footer {
+  font-size: 16px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+  
+#reasons-list {
+  text-align: left;
+}
+
+/* My Keyboard Section */
+
+.keyboard-box {
+  /* Tinggi dan lebar kartu */
+  height: 300px; /* Mengatur tinggi kartu menjadi 300px */
+  width: calc(50% - 20px); /* Menyesuaikan lebar kartu dan jarak antar kartu */
+  /* Perubahan warna latar belakang */
+  background-color: #66ab24; /* Tetapkan warna latar belakang yang diinginkan */
+  /* Mengubah border-radius */
+  border-radius: 20px; /* Menyesuaikan border-radius menjadi lebih besar */
+  /* Margin antar kartu */
+  margin: 20px; /* Menyesuaikan margin antar kartu menjadi sekitar 20px */
+  /* Efek 3D */
+  transform-style: preserve-3d;
+  display: inline-block; /* Mengatur kartu-kartu menjadi berjejer secara horizontal */
+}
+
+
+
+
+.keyboard-box::before {
+  content: 'PAKET';
+  position: absolute;
+  color: #fff;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.keyboard-box:hover::before {
+  opacity: 0.2;
+}
+
+.keyboard-box::after {
+  content: 'NETFLIX';
+  position: absolute;
+  color: #fff;
+  font-size: 4.3em;
+  font-weight: bold;
+  font-style: italic;
+  top: 350px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.keyboard-box:hover::after {
+  opacity: 0.2;
+}
+
+.keyboard-name {
+  position: absolute;
+  top: 10px; /* Menyesuaikan posisi teks nama keyboard */
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em; /* Mengurangi ukuran font */
+}
+
+.keyboard-box:hover .keyboard-name {
+  top: 20px;
+  opacity: 1;
+}
+
+
+.keyboard-detail-button {
+  position: absolute;
+  bottom: 10px; /* Menyesuaikan posisi tombol detail */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.keyboard-box:hover .keyboard-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.keyboard-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Mengurangi ukuran gambar */
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.keyboard-box:hover .keyboard-img {
+  transform: translate3d(-50%, -52%, 100px) rotate(5deg) scale(1.2);
+}
+.btn-outline-dark {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/*netflix card*/
+.netflix-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Styling untuk card belakang */
+.card-back {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+
+/*css untuk button order via*/
+.btn-order {
+  min-width: 50px; /* Atur lebar minimum tombol */
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Garis gradasi */
+.gradient-line {
+  height: 3px; /* Sesuaikan tinggi garis gradasi */
+  background: linear-gradient(to right, #4169E1, #800080); /* Warna gradasi dari biru keunguan */
+}
+
+/* Gradient Background Styles */
+.bg-gradient {
+  background: linear-gradient(to right, #ff0000, #666666);
+}
+
+/* Tambahkan gaya untuk tombol gradient */
+.gradient-btn {
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: #fff; /* Warna teks putih */
+  transition: all 0.3s ease; /* Animasi transisi */
+  width: 100%; /* Lebar 100% */
+  padding: 15px; /* Padding */
+  font-size: 1.1rem; /* Ukuran font */
+}
+/*Gradien Tombol*/
+.gradient-btn:hover {
+  background: linear-gradient(to right, #6a7ee7, #a4b0fc); /* Warna gradasi saat dihover */
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #00aaff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+

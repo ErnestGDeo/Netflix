@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../assets/css/checkout.css">
+    <style>
+        /* Tambahkan gaya CSS di sini jika diperlukan */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back</button>
+
+        <h1>Paket Reguler</h1>
+        <div class="product">
+            <p class="product-info">Share</p>
+            <p class="product-info">Cart</p>
+            <h2 class="product-title">Lifetime Seumur Hidup Selamanya Netflix Premium</h2>
+            <p class="product-price">IDR 150,000.00</p>
+            
+            <!-- Tolong disini tambahkan beberapa card yang bisa di slide, tapi yang tertampil hanya 1 card -->
+            <p class="product-description">BACA DESKRIPSI PRODUK + PENJELASAN PAKET NETFLIX ADA DI FOTO PRODUK</p>
+            <ul class="features">
+                <li>✅ Masa aktif seumur hidup yaitu masa aktif lebih panjang dari paket lainnya, ada customer kami yang sudah pakai akun yang sama selama 8 tahun penuh dan akun netflix nya masih aktif sampai sekarang digunakan nonton dan download karna akunnya otomatis perpanjangan setiap bulannya. Jadi untung banget beli paket LIFETIME karna sekali beli aja gak perlu pusing bayar tiap tahun.</li>
+                <li>Kami sangat rekomendasikan untuk beli paket Lifetime</li>
+                <li>Proses pembelian netflix sangat mudah :</li>
+                <li>Silahkan tekan tombol BUY NOW</li>
+                <li>Isi data diri kamu (nama, email, nomor hp)</li>
+                <li>Lakukan pembayaran, setelah pembayaran Sukses, kamu cukup tekan tombol (GET YOUR LINK) yang muncul di website ini atau klik tombol hijau melalui email yang kami kirim ke alamat email kamu berjudul "RECEIPT" setelah pembayaran SUKSES.</li>
+                <li>Setelah menekan tombol GET YOUR LINK Lalu kamu akan otomatis mendapatkan akun netflix (email dan password NETFLIX baru dari kami)</li>
+                <li>Kamu tinggal gunakan akun netflix tersebut untuk masuk ke aplikasi netflix di perangkat kamu dan bisa langsung digunakan nonton dan download sepuasnya.</li>
+                <li>Pastikan tidak ada kesalahan pengetikan data diri kamu ya karna kami akan mengirimkan akun netflixnya lewat email</li>
+                <li>Akun netflix baru akan diberikan oleh kami setelah pembayaran sukses ya kak. Jadi tinggal login dan pakai saja netflix nya.</li>
+                <li>Untuk Netflix, prime video dan Disney akun dari kami</li>
+                <li>YouTube dan spotify pakai akun kamu pribadi sistem link invite via email*</li>
+                <li>Tekan BUY NOW sekarang untuk membeli akun netflix premium dan dapatkan bonus nya khusus hari ini.</li>
+            </ul>
+        </div>
+        <div class="footer" id="footer">
+            <a href="#" class="btn-buy" id="btn-buy">Beli Sekarang</a>
+        </div>
+    </div>
+
+    <!--modal checkout-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <div class="cart-header">
+                <h5 class="cart-title">Your Shopping</h5>
+            </div>
+            <div class="cart-item">
+                <img class="item-image" src="https://s3.ap-southeast-1.amazonaws.com/assets.lynk.id/draft-products/29-02-2024/1709185492199_3483887" alt="">
+                <div class="item-details">
+                    <h6 class="item-name">Lifetime Seumur Hidup Selamanya Netflix Premium Private Account Full 5 Profile 4K UHD 4 Perangkat Resmi Garansi</h6>
+                    <p class="item-price">IDR 150.000</p>
+                    <span class="item-quantity">Qty. 1</span>
+                    <a href="#" class="edit-btn" onclick="showModalEdit()">Edit</a>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h6 class="summary-title">ORDER SUMMARY</h6>
+                <table class="summary-table">
+                    <tbody>
+                        <tr>
+                            <td class="summary-label">Total (1 Items)</td>
+                            <td class="summary-value">IDR 199,000</td>
+                        </tr>
+                        <tr>
+                            <td class="summary-label">Voucher</td>
+                            <td class="summary-value">0</a></td>
+                        </tr>
+                        <tr>
+                            <td class="summary-label">Grand total</td>
+                            <td class="summary-value">IDR 199,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="voucher">
+                    <button class="voucher-btn">Add Voucher</button>
+                </div>
+            </div>
+            <a href="/checkout/shipping?token=.eJwNyzsSgCAMBcC70GcGHhB43oZPMmNtqd5dt987XOcOR0gJCnUX4xxS6Cq0AlkcCxjuZvvRkmvCtgZ3RJA6R51xS2ZS-X-rvZPh_QANRBcs.ZgaAPw.s5OSnsrdbhrsMnOFcUvGADPXEys" class="buy-btn">Buy Now</a>
+            <button class="continue-btn">Continue Shopping</button>
+        </div>
+    </div>
+    
+    <!--modal qty-->
+    <div id="editQtyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Edit Quantity</h2>
+            </div>
+            <div class="modal-body">
+                <p>Enter new quantity:</p>
+                <input type="number" id="newQty" name="newQty" min="1" value="1">
+            </div>
+            <div class="modal-footer">
+                <button onclick="saveNewQty()">Save</button>
+                <button onclick="closeEditModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var editModal = document.getElementById("editQtyModal");
+        var btn = document.getElementById("btn-buy");
+        var span = document.getElementsByClassName("close");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        for (var i = 0; i < span.length; i++) {
+            span[i].onclick = function() {
+                modal.style.display = "none";
+                editModal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == editModal) {
+                editModal.style.display = "none";
+            }
+        }
+
+        function showModalEdit() {
+            modal.style.display = "none";
+            editModal.style.display = "block";
+        }
+
+        function closeEditModal() {
+            editModal.style.display = "none";
+            modal.style.display = "block";
+        }
+
+        function saveNewQty() {
+            console.log("Save new quantity");
+            editModal.style.display = "none";
+            modal.style.display = "block";
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

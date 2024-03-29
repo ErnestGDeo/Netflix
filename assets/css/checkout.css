@@ -1,0 +1,453 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.btn-buy {
+    padding: 15px 60px; /* Menyesuaikan lebar tombol */
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #45a049;
+}
+/* Style the modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0; /* Menempatkan modal di bagian bawah */
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10px auto; /* Jarak dari tepi */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar modal */
+    max-width: 400px; /* Ukuran maksimum modal */
+  }
+  
+  /* Style the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+ /* Style the modal */
+/* Style the modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px; /* Ubah nilai max-width menjadi lebih kecil */
+}
+
+  
+  /* Style the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart-icon {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-title {
+    font-size: 24px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.item-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-quantity {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.edit-btn {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2ab57d;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.order-summary {
+    margin-top: 20px;
+}
+
+.summary-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.summary-table {
+    width: 100%;
+}
+
+.summary-label {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 5px;
+}
+
+.summary-value {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.voucher {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.voucher-btn {
+    height: 26px;
+    font-size: 13px;
+    padding: 0 26px;
+    background-color: transparent;
+    border: 2px solid #2ab57d;
+    border-radius: 5px;
+    color: #2ab57d;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.voucher-btn:hover {
+    background-color: #2ab57d;
+    color: #fff;
+}
+
+.buy-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #2ab57d;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 0;
+    border-radius: 7px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #1e8e59;
+}
+
+.continue-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: #2ab57d;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 0;
+    border: 2px solid #2ab57d;
+    border-radius: 7px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.continue-btn:hover {
+    background-color: #2ab57d;
+    color: #fff;
+}
+
+  
+  
+  .modal-content {
+    position: relative;
+    margin: 10% auto; /* Menempatkan modal di tengah layar */
+    padding: 20px;
+    background-color: #fefefe; /* Warna latar belakang modal */
+    border-radius: 10px;
+    max-width: 420px; /* Lebar maksimum modal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  }
+  
+  .close {
+    position: absolute; /* Memosisikan tombol close secara absolut */
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #888;
+  }
+  
+  .modal-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .modal-body {
+    padding: 20px 0;
+  }
+  
+  .modal-footer {
+    padding-top: 10px;
+    text-align: right;
+  }
+  
+  /* Styling untuk tombol-tombol di footer modal */
+  .modal-footer button {
+    margin-left: 10px; /* Jarak antara tombol */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buy-now-btn {
+    background-color: #2ab57d; /* Warna tombol Beli Sekarang */
+    color: #fff; /* Warna teks putih */
+  }
+  
+  .continue-btn {
+    background-color: #fff; /* Warna latar belakang tombol Lanjut Belanja */
+    color: #2ab57d; /* Warna teks tombol Lanjut Belanja */
+    border: 1px solid #2ab57d; /* Border untuk tombol */
+  }
+  
+  .continue-btn:hover {
+    background-color: #2ab57d; /* Warna latar belakang tombol saat dihover */
+    color: #fff; /* Warna teks tombol saat dihover */
+  }
+
+  /*modal edit*/
+
+  /* Style the edit modal */
+#editQtyModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Edit modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal header */
+.modal-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Modal body */
+.modal-body {
+    padding: 20px 0;
+}
+
+/* Modal footer */
+.modal-footer {
+    padding-top: 10px;
+    text-align: right;
+}
+
+/* Modal footer buttons */
+.modal-footer button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for Save button */
+.modal-footer button:first-child {
+    background-color: #2ab57d;
+    color: #fff;
+}
+
+/* Styling for Cancel button */
+.modal-footer button:last-child {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Hover effect for buttons */
+.modal-footer button:hover {
+    opacity: 0.8;
+}
+
+  
