@@ -135,25 +135,27 @@
 <!--Awal Order Via-->
 <section id="order-via">
   <div class="container">
-    <h2 class="text-center mb-4 gradient-text" data-aos="fade-down">Pilihan Order Melalui</h2>
+    <h2 class="text-center mb-4 gradient-text" data-aos="fade-up">Pilihan Order Melalui</h2>
     <div class="row">
-      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-down">
+      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-up">
         <div class="btn-container">
           <a href="../views/orderviaWeb.html" class="btn btn-primary btn-order btn-block gradient-btn" data-service="Website">
             <i class="bi bi-globe"></i> Order Via Website
           </a>
+          
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-down">
+      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-up">
         <div class="btn-container">
-          <button class="btn btn-primary btn-order btn-block gradient-btn" data-service="Telegram">
+          <button class="btn btn-primary btn-order btn-block gradient-btn" data-service="Telegram" onclick="openTelegram()">
             <i class="bi bi-telegram"></i> Order Via Telegram
           </button>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-down">
+      
+      <div class="col-lg-4 col-md-12 mb-3" data-aos="fade-up">
         <div class="btn-container">
-          <button class="btn btn-primary btn-order btn-block gradient-btn" data-service="WhatsApp">
+          <button class="btn btn-primary btn-order btn-block gradient-btn" data-service="WhatsApp" onclick="openWhatsApp()">
             <i class="bi bi-whatsapp"></i> Order Via WhatsApp
           </button>
         </div>
@@ -192,6 +194,16 @@
 
     
     <!-- Akhir Footer -->
+
+    <script>
+      function openTelegram() {
+        window.open('https://t.me/your-telegram-id', '_blank');
+      }
+    
+      function openWhatsApp() {
+        window.open('https://api.whatsapp.com/send?phone=+6281220426494', '_blank');
+      }
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

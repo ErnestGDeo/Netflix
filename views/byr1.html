@@ -148,6 +148,35 @@
             editModal.style.display = "none";
             modal.style.display = "block";
         }
+        var productPrice = 99000; // Harga produk per unit
+    var currentQty = 1; // Kuantitas produk saat ini
+    var total = productPrice * currentQty; // Total harga
+
+    // Fungsi untuk menampilkan modal edit kuantitas
+    function showModalEdit() {
+        modal.style.display = "none";
+        editModal.style.display = "block";
+    }
+
+    // Fungsi untuk menutup modal edit kuantitas
+    function closeEditModal() {
+        editModal.style.display = "none";
+        modal.style.display = "block";
+    }
+
+    // Fungsi untuk mengupdate kuantitas dan total harga
+    function updateQuantity() {
+        var newQty = parseInt(document.getElementById("newQty").value);
+        if (newQty > 0) {
+            currentQty = newQty;
+            document.getElementById("item-quantity").innerText = "Qty. " + currentQty;
+            document.getElementById("item-price").innerText = "IDR " + (productPrice * currentQty).toFixed(2);
+            document.getElementById("summary-total").innerText = "IDR " + (productPrice * currentQty).toFixed(2);
+            closeEditModal();
+        } else {
+            alert("Quantity must be at least 1");
+        }
+    }
         
     </script>
 </body>
